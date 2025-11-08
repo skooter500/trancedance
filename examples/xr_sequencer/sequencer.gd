@@ -61,7 +61,7 @@ func toggle(e, row, col):
 	print_sequence()
 	
 
-var s = 0.04
+var s = 0.08
 var spacer = 1.1
 
 func make_sequencer():	
@@ -129,7 +129,7 @@ func _on_timer_timeout() -> void:
 
 
 func _on_start_stop_area_entered(area: Area3D) -> void:
-	$"../sequencer2/Timer".start()
+	$"../sequencer/Timer".start()
 	
 	if $Timer.is_stopped():
 		$Timer.start()
