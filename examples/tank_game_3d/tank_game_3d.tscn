@@ -63,6 +63,7 @@ brick_scene = ExtResource("3_c5v0u")
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="ground" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6751559, -0.12870932, -0.30266762)
 material_override = ExtResource("4_ubptd")
 mesh = SubResource("PlaneMesh_00q4b")
 skeleton = NodePath("../..")
