@@ -1,3 +1,5 @@
+class_name Analyser
+
 extends Node
 
 var spectrum_analyzer: AudioEffectInstance
@@ -8,6 +10,8 @@ func _ready():
 	var bus_index = AudioServer.get_bus_index("Master")  # Or your bus name
 	spectrum_analyzer = AudioServer.get_bus_effect_instance(bus_index, 0)
 
+static var energy_db
+
 func _process(_delta):
 	if spectrum_analyzer:
 		# Get the magnitude (amplitude) at a specific frequency
@@ -15,11 +19,8 @@ func _process(_delta):
 		
 		# Convert to decibels
 		var energy = magnitude.length()
-		var energy_db = linear_to_db(energy)
+		energy_db = linear_to_db(energy)
 		## print("Amplitude: ", energy)
 
-		# Normalize to 0-1 range
-		var normalized_energy = (MIN_DB + energy_db) / MIN_DB
-		normalized_energy = clamp(1.0 - normalized_energy, 0.0, 1.0)
-		
+		# Normalize to 0-1 range		
 		

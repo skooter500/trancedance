@@ -173,7 +173,11 @@ func _on_start_stop_area_entered(area: Area3D) -> void:
 	if $Timer.is_stopped():
 		start.emit()
 		$Timer.start()
+		$"../sequencer3/Timer".start()
+		$"../sequencer2/Timer".start()
 	else:
 		stop.emit()
 		$Timer.stop()
+		$"../sequencer3/Timer".stop()
+		$"../sequencer2/Timer".stop()
 	pass # Replace with function body.
