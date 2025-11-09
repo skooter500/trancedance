@@ -1,4 +1,4 @@
-# Trancadence
+# Trancedance
 
 Created for the Cyberdelic Society Hackathon
 
